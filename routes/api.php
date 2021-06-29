@@ -3,6 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\TagsController;
+use App\Http\Controllers\DocumentsController;
+use App\Http\Controllers\CategoriesController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +18,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:api')->prefix('v1')->group(function(){
+    Route::get('/user', function(Request $request){
+        return $request->user();
+    });
+    
+    // Route::get('/tags/{tag}', [TagsController::class, 'show']);
+    
+    // Route::get('/tags', [TagsController::class, 'index']);
+
+
+    Route::apiResource('/tags', TagsController::class);
+
+    Route::apiResource('/documents', DocumentsController::class);
+
+    Route::apiResource('/categories', CategoriesController::class);
 });

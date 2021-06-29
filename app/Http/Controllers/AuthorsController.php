@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\Author;
 use Illuminate\Http\Request;
-use App\Http\Resources\CategoriesResource;
-use App\Http\Requests\CategoriesRequest;
 
-class CategoriesController extends Controller
+class AuthorsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +14,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        return CategoriesResource::collection(Category::all());
+        //
     }
 
     /**
@@ -35,33 +33,29 @@ class CategoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CategoriesRequest $request)
+    public function store(Request $request)
     {
-        $category = Category::create([
-            'category' => $request->input('category')
-        ]);
-
-        return new CategoriesResource($category);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show(Author $author)
     {
-        return new CategoriesResource($category);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(Author $author)
     {
         //
     }
@@ -70,28 +64,22 @@ class CategoriesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function update(CategoriesRequest $request, Category $category)
+    public function update(Request $request, Author $author)
     {
-        $category->update([
-            'category' => $request->input('category')
-        ]);
-
-        return new CategoriesResource($category);
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(Author $author)
     {
-        $category->delete();
-
-        return response(null, 204);
+        //
     }
 }

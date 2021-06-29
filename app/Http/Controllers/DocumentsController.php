@@ -61,6 +61,7 @@ class DocumentsController extends Controller
     public function show(Document $document)
     {
         return new DocumentsResource($document);
+        // return $document->category;
     }
 
     /**

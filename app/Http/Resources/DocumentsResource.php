@@ -23,7 +23,8 @@ class DocumentsResource extends JsonResource
                 'description' => $this->description,
                 'views' => (string)$this->views,
                 'download' => (string)$this->download,
-                'tags' => $this->tag
+                'tags' => $this->tag,
+                'categories' => $this->category
             ]
         ];
     }

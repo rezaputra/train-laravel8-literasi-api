@@ -22,5 +22,16 @@ class Document extends Model
         );
     }
 
+    public function category(){
+        return $this->hasManyThrough(
+            '\App\Models\Category',
+            '\App\Models\DocumentCategory',
+            'document_id',
+            'id',
+            'id',
+            'category_id'
+        );
+    }
+
 
 }

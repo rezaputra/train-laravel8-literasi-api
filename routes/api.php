@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TagsController;
 use App\Http\Controllers\DocumentsController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\AuthorsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +25,6 @@ Route::middleware('auth:api')->prefix('v1')->group(function(){
     });
     
     // Route::get('/tags/{tag}', [TagsController::class, 'show']);
-    
-    // Route::get('/tags', [TagsController::class, 'index']);
 
 
     Route::apiResource('/tags', TagsController::class);
@@ -33,4 +32,6 @@ Route::middleware('auth:api')->prefix('v1')->group(function(){
     Route::apiResource('/documents', DocumentsController::class);
 
     Route::apiResource('/categories', CategoriesController::class);
+
+    Route::apiResource('/authors', Author::class);
 });
